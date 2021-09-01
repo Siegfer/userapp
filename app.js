@@ -22,10 +22,8 @@ app.get('/users', async (req, res) => {
 	try {
 		const allUsers = await User.findAll({})
 		console.log('ALL USERS:', allUsers)
-
-		const parseUsers = allUsers.map((u) => u.toJSON())
-		console.log(parseUsers)
-		res.render('/users/index', { users: parsedUsers })
+		const parsedUsers = allUsers.map((u) => u.toJSON())
+		res.render('users/index', { users: parsedUsers })
 	} catch (err) {
 		console.log(err)
 	}
