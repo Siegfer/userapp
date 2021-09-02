@@ -3,13 +3,13 @@ const { User } = require('./models')
 // CREATE, READ, UPDATE, DELETE
 
 //CREATE
-async function makeUser(firstName, lastName, age, email) {
+makeUser = async (firstName, lastName, age, email) => {
 	try {
 		const newUser = await User.create({ firstName, lastName, age, email })
 		let user = newUser.toJSON() // only log the 1 object we wanted
 		console.log(user.firstName)
-	} catch (err) {
-		console.log(err)
+	} catch (error) {
+		console.log(error)
 	}
 }
 

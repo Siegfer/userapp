@@ -8,6 +8,7 @@ updatedAt => new Date().toISOString()
 */
 
 const faker = require('faker')
+
 const seedArray = [] // need an array for data
 for (let i = 0; i < 1000; i++) {
 	const newObj = {
